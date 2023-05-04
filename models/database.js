@@ -6,13 +6,13 @@ dotenv.config();
 
 
 const connection =new Sequelize(
-    process.env.DB_NAME, //database name
-    process.env.DB_USERNAME, // userr
-    process.env.DB_PASSWORD,
+    process.env.DATABASE_NAME, //database name
+    process.env.DATABASE_USERNAME, // userr
+    process.env.DATABASE_PASSWORD,
     {
-        dialect: mysql,
-        host: localhost
+        dialect: 'mysql',
+        host: 'localhost'
     }
 )
 
-export default sequelize;
+export default connection;
