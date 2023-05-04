@@ -9,19 +9,13 @@
     "start": "nodemon index.js"
   },
   
-  "repository": { 
-    "type": "git",
-    "url": "git+https://github.com/dn4lele/medigital.git"
-  },
+
   
 
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dn4lele/medigital/issues"
-  },
-  "homepage": "https://github.com/dn4lele/medigital#readme",
+
   "dependencies": {
     "dotenv": "^16.0.3",
     "ejs": "^3.1.9",
