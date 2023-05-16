@@ -14,6 +14,7 @@ router.get('/dashboard' , async(req,res)=>{
 
     //html
     res.render('index' , {
+        pageTitle: 'Welcome admin' 
 
     })
 
