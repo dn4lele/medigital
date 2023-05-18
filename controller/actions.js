@@ -26,4 +26,34 @@ router.get('/dashboard' , async(req,res)=>{
 })
 
 
+
+router.get('/product/:id' , async(req,res)=>{
+    const id= req.params.id;
+    Category.findByPk(id)
+    .then(category=> {
+
+        Product.findAll({where:{CategoryId:id}})
+        .then(products=>{
+            res.render('products' , {
+                pageTitle: 'Edit '+ category.categoryname,
+                category:category,
+                Products:products
+            })
+
+        })
+
+    })
+    .catch(errorr=>{
+        res.render('products' , {
+            pageTitle: 'Welcome admin' 
+        })
+    })
+
+
+
+})
+
+
+
+
 export default router;

@@ -15,6 +15,7 @@ const Product= database.define("product",{
     productDescription: sequelize.TEXT,
     isAvailable:sequelize.BOOLEAN,
     unitInStock:sequelize.INTEGER,
+    CategoryId: sequelize.INTEGER
 
 });
 
