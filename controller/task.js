@@ -108,4 +108,22 @@ router.post('/add_category' , async(req,res)=>{
 })
 
 
+//delete category
+router.post('/get_prod' , async(req,res)=>{
+    const {whatiwrite}=req.body;
+    await Product.findOne({ where: { productname: whatiwrite } })
+    .then(result =>{
+        console.log(result)
+        console.log("\n\n\n\n"+result.id+"\n\n\n\n")
+
+        return res.redirect('/edit_product/'+result.id)
+    })
+    .catch(errorr=>{
+        return res.redirect('/dashboard')
+    })
+})
+
+
+
+
 export default router;
