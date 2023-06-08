@@ -48,9 +48,6 @@ router.get('/product/:id' , async(req,res)=>{
             pageTitle: 'Welcome admin' 
         })
     })
-
-
-
 })
 
 
