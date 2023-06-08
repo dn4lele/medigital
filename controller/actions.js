@@ -5,6 +5,38 @@ import Category from "../models/category.js";
 
 
 
+
+router.get('/edit_product/:id' , async(req,res)=>{
+    const id = req.params.id
+    await Category.findAll()
+    .then( categories=>{    
+        Product.findByPk(id)
+        .then(Product=> {
+            res.render('edit_product' , {
+                pageTitle: 'Welcome admin',
+                Product:Product,
+                categories:categories
+            })
+
+        })
+        .catch(errorr=>{
+            res.render('edit_product' , {
+                pageTitle: 'Welcome admin' 
+            })
+        })}
+    )
+    .catch(errorr=>{
+        res.render('edit_product' , {
+            pageTitle: 'Welcome admin' 
+        })
+    })
+
+
+
+
+})
+
+
 router.get('/dashboard' , async(req,res)=>{
 
     Category.findAll()

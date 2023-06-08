@@ -49,6 +49,20 @@ router.post('/edit_category/:id' , async(req,res)=>{
     })
 })
 
+router.post('/edit_product/:id' , async(req,res)=>{
+    const {Productname,ProductmainImage,Productprice,unitInStock , productDescription , isAvailable ,CategoryId }=req.body;
+
+    const id=req.params.id;
+    const catid=CategoryId;
+
+    await Product.update({productname:Productname ,productImage:ProductmainImage , productprice:Productprice ,unitInStock:unitInStock ,productDescription:productDescription ,isAvailable:isAvailable ,CategoryId:CategoryId},{ where: { id: id } })
+    .then(result =>{
+        return res.redirect('/product/'+catid)
+    })
+    .catch(errorr=>{
+        return res.redirect('/dashboard')
+    })
+})
 
 
 

@@ -67,6 +67,7 @@
                         <input type="text" class="form-control" name="unitInStock" style="width: 100px;" >
 
                         <label  class="form-label">is Available</label>
+                        
                         <select class="form-select" name="isAvailable" aria-label="Default select example">
                             <option selected value="true" >true</option>
                             <option value="false">false</option>
@@ -114,9 +115,12 @@
 
 
                                     <td>
+                                        <a href="/edit_product/<%= Product.id %>" class="btn btn-info">edit</a>
+
                                         <form style="display: inline;" id="delete_product<%= Product.id %>" method="post" action="/functions/delete_prod/<%= Product.id %>/<%= category.id %>">
                                             <button  form="delete_product<%= Product.id %>" type="submit" class="btn btn-danger" >Delete</button>
                                         </form>
+
                                     </td>
 
 
